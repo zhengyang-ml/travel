@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>旅记档案 | 湖南旅游攻略模板站</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-decoration" aria-hidden="true"></div>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">TRAVEL LOG ARCHIVE</p>
+      <h1 id="heroTitle"></h1>
+      <p id="heroSubtitle" class="subtitle"></p>
+      <div class="meta-row">
+        <span id="heroAudience"></span>
+        <span id="updatedAt"></span>
+      </div>
+      <div class="editor-toolbar">
+        <label for="citySelect">选择城市模板</label>
+        <select id="citySelect" aria-label="选择城市模板"></select>
+        <button id="editBtn" type="button">开启编辑</button>
+        <button id="saveBtn" type="button" hidden>保存修改</button>
+        <button id="cancelBtn" type="button" hidden>取消</button>
+        <button id="resetBtn" type="button">重置当前城市</button>
+      </div>
+      <p class="editor-tip">编辑后的内容会保存在当前浏览器；换设备不会自动同步。</p>
+    </header>
+
+    <nav class="quick-nav" aria-label="页面导航">
+      <a href="#overview">速览</a>
+      <a href="#itinerary">行程规划</a>
+      <a href="#spots">景区信息</a>
+      <a href="#budget">费用拆解</a>
+      <a href="#transport">路径与交通</a>
+      <a href="#food">美食</a>
+      <a href="#packing">行李准备</a>
+      <a href="#tips">注意事项</a>
+      <a href="#sources">信息来源</a>
+    </nav>
+
+    <main class="layout">
+      <section id="overview" class="card section">
+        <h2>郴州速览</h2>
+        <div id="overviewGrid" class="overview-grid"></div>
+      </section>
+
+      <section id="itinerary" class="card section">
+        <h2>行程规划（可切换）</h2>
+        <p class="section-lead">按时间和体力选择 2 天 / 3 天 / 4 天版本，默认是第一次去郴州最稳妥的 3 天线。</p>
+        <div id="tripTabs" class="tabs" role="tablist" aria-label="行程版本"></div>
+        <div id="tripContent" class="trip-content"></div>
+      </section>
+
+      <section id="spots" class="card section">
+        <h2>核心景区：门票、开放时间、预约方式</h2>
+        <p class="section-lead">价格与时间会因淡旺季和活动调整，以下为 2026-03-28 核验结果，出发前建议二次确认。</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>景区</th>
+                <th>门票参考</th>
+                <th>开放时间</th>
+                <th>预约方式</th>
+                <th>建议游玩</th>
+              </tr>
+            </thead>
+            <tbody id="spotRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="budget" class="card section">
+        <h2>费用拆解（按 3 天 2 晚估算）</h2>
+        <p class="section-lead">不含往返大交通。你可以根据住的档次和是否包车，在此基础上做加减。</p>
+        <div id="budgetGrid" class="budget-grid"></div>
+      </section>
+
+      <section id="transport" class="card section">
+        <h2>路径规划与交通策略</h2>
+        <div id="transportGrid" class="transport-grid"></div>
+      </section>
+
+      <section id="food" class="card section">
+        <h2>郴州美食推荐</h2>
+        <div id="foodGrid" class="food-grid"></div>
+      </section>
+
+      <section id="packing" class="card section">
+        <h2>行李准备清单</h2>
+        <p class="section-lead">先选季节，再按清单打包。郴州山区天气变化快，防水和防滑优先级高于“好看”。</p>
+        <div class="packing-tools">
+          <label for="seasonSelect">选择出行季节</label>
+          <select id="seasonSelect">
+            <option value="spring">春季（3-5月）</option>
+            <option value="summer">夏季（6-8月）</option>
+            <option value="autumn">秋季（9-11月）</option>
+            <option value="winter">冬季（12-2月）</option>
+          </select>
+        </div>
+        <div id="packingGrid" class="packing-grid"></div>
+      </section>
+
+      <section id="tips" class="card section">
+        <h2>注意事项与避坑</h2>
+        <ul id="tipList" class="tip-list"></ul>
+      </section>
+
+      <section id="sources" class="card section">
+        <h2>信息来源（可点击核验）</h2>
+        <p class="section-lead">
+          门票、开放时间、预约渠道来自景区/平台公开信息与政府公告。若你需要，我可以再给你做“出发前一天自动复核清单”版本。
+        </p>
+        <ul id="sourceList" class="source-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
